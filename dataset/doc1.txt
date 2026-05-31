@@ -1,0 +1,4 @@
+Machine learning is a subset of artificial intelligence that focuses on algorithms that can learn from data. 
+These algorithms improve automatically through experience and are used in a wide variety of applications including email filtering, 
+computer vision, and recommendation systems. Deep learning is a specialized branch of machine learning that uses neural networks 
+with multiple layers to model complex patterns in data.

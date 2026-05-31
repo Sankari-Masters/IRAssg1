@@ -1,0 +1,4 @@
+Data mining is the process of discovering patterns in large data sets involving methods at the intersection of 
+machine learning, statistics, and database systems. It includes data cleaning, data integration, data selection, data transformation, 
+data mining, pattern evaluation, and knowledge presentation. Applications include market basket analysis, customer segmentation, 
+and fraud detection.

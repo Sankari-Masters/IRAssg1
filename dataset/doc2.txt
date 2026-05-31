@@ -1,0 +1,3 @@
+Natural language processing (NLP) is a field of artificial intelligence that gives computers the ability to understand 
+and interpret human language. NLP techniques include tokenization, part-of-speech tagging, named entity recognition, and sentiment analysis. 
+Modern NLP systems use deep learning models like transformers to achieve state-of-the-art results on various language tasks.

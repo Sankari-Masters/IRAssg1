@@ -1,0 +1,4 @@
+Information retrieval is the science of searching for information in documents, searching for documents themselves, 
+and also searching for metadata that describe documents. Search engines use information retrieval techniques to index web pages 
+and provide relevant results to user queries. Key concepts include inverted indexes, term frequency-inverse document frequency (TF-IDF), 
+and vector space models.

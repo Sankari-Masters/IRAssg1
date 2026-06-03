@@ -1,252 +1,138 @@
 # Information Retrieval System - Assignment 1
 
 ## Overview
-This is a comprehensive Information Retrieval system built with Streamlit that demonstrates various IR techniques including text preprocessing, indexing, phrase query processing, dictionary search, and tolerant retrieval.
+This Streamlit application implements the end-to-end Information Retrieval workflow required for Assignment 1. The complete workflow runs from the front end: users can load or upload documents, inspect preprocessing output, build indexes, run queries, compare phrase-query methods, compare BST and B-Tree dictionary search, test tolerant retrieval, and collect inferences for the report.
 
 ## Features
 
 ### 1. Document Upload
-- Upload multiple text documents (TXT, CSV)
-- View uploaded documents
-- Built-in sample dataset for testing
+- Upload multiple TXT documents or CSV datasets.
+- Load the included `dataset/` document collection.
+- View all loaded documents in the Streamlit UI.
 
 ### 2. Text Preprocessing
-- Tokenization
-- Lowercasing
-- Stop word removal
-- Hyphen handling
-- Stemming (Porter Stemmer)
-- Lemmatization (WordNet Lemmatizer)
-- Comparison between stemming and lemmatization
+- Tokenization.
+- Lowercasing.
+- Stop-word removal.
+- Hyphen handling.
+- Stemming with Porter stemmer.
+- Lemmatization with WordNet when available, with a fallback so the app still runs.
+- Inverted index creation from processed tokens.
+- Stemming vs lemmatization comparison using cosine similarity over query and document term vectors.
 
 ### 3. Inverted Index
-- Build and search inverted index
-- View index structure
-- Term frequency and document frequency
+- Build an inverted index from the selected preprocessing configuration.
+- Search terms from the UI.
+- Display document frequency, term frequency, postings lists, and ranked result rows.
 
 ### 4. Phrase Query Processing
-- Biword Index for phrase queries
-- Positional Index for phrase queries
-- Comparison of both approaches
-- Analysis of false positives
+- Build a biword index.
+- Build a positional index.
+- Search phrase queries using both indexes.
+- Show biword-only false positives for longer phrases.
+- Explain why the positional index is more accurate.
 
 ### 5. Dictionary Search
-- Binary Search Tree (BST) implementation
-- B-Tree implementation
-- Performance comparison with multiple queries
-- Experimental results table
+- Build a balanced Binary Search Tree over the vocabulary.
+- Build a B-Tree over the same vocabulary.
+- Compare query search time, postings retrieval time, and total time.
+- Generate an experimental results table over multiple queries.
 
 ### 6. Tolerant Retrieval
-- Wildcard queries using k-gram index
-- Spelling correction using edit distance
-- Phonetic correction using Soundex algorithm
-- Analysis of tolerance to imperfect queries
+- Wildcard queries using a k-gram index.
+- Spelling correction using edit distance.
+- Phonetic correction using Soundex.
+- Display matching terms and retrieved documents.
 
-### 7. Inference & Discussion
-- Comprehensive analysis of all techniques
-- Conclusions based on experimental results
-- Limitations and future improvements
+### 7. Inference and Discussion
+- Dynamic answers for the compulsory inference questions after experiments are run.
+- Static limitations and possible improvements for report writing.
 
 ## Installation
 
 ### Prerequisites
-- Python 3.8 or higher
-- pip package manager
+- Python 3.8 or higher.
+- pip.
 
 ### Steps
 
 1. Navigate to the project directory:
 ```bash
-cd ir_assignment
+cd "/Users/venkateshbhaskara/Documents/** BITS PILANI **/Education/Sem2/IR Assignment1/IRAssg1-main"
 ```
 
-2. Install required dependencies:
+2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Run the Streamlit application:
+3. Run the app:
 ```bash
 streamlit run app.py
 ```
 
-The application will open in your default web browser at `http://localhost:8501`
+Streamlit opens the application in a browser, usually at `http://localhost:8501`.
 
 ## Usage
 
-### Using Sample Dataset
-1. Open the application
-2. Navigate to "Document Upload" page
-3. Click "Load Sample Dataset" to load 5 sample documents about AI/ML topics
-4. Proceed to other modules to explore different features
-
-### Using Custom Documents
-1. Navigate to "Document Upload" page
-2. Upload your text documents using the file uploader
-3. View uploaded documents
-4. Use other modules to process and search your documents
-
-### Running Experiments
-
-#### Text Preprocessing
-1. Go to "Text Preprocessing" page
-2. Select preprocessing options
-3. Click "Apply Preprocessing"
-4. View results and stemming vs lemmatization comparison
-
-#### Inverted Index
-1. Go to "Inverted Index" page
-2. Click "Build Inverted Index"
-3. Search for specific terms
-4. View index structure
-
-#### Phrase Query Processing
-1. Go to "Phrase Query Processing" page
-2. Build both Biword and Positional indices
-3. Enter phrase queries (e.g., "machine learning")
-4. Compare results from both approaches
-
-#### Dictionary Search
-1. Go to "Dictionary Search" page
-2. Click "Build Dictionary from Documents"
-3. Search for individual terms
-4. Run "100 Random Queries" for performance comparison
-5. View experimental results table
-
-#### Tolerant Retrieval
-1. Go to "Tolerant Retrieval" page
-2. Click "Build K-Gram Index"
-3. Try wildcard queries (e.g., "mach*")
-4. Test spelling correction with misspelled words
-5. Test phonetic correction
-
-## Assignment Requirements Coverage
-
-### Streamlit End-to-End Workflow (1 Mark)
-✅ Complete workflow through Streamlit interface
-✅ Document upload and viewing
-✅ Query input from frontend
-✅ Preprocessing and retrieval options selection
-✅ Display of intermediate and final outputs
-
-### Text Preprocessing (1.5 Marks)
-✅ Tokenization and inverse index creation
-✅ Lowercasing
-✅ Stop word removal
-✅ Hyphen handling
-✅ Stemming and Lemmatization
-✅ Comparison with semantic similarity measure
-
-### Stemming vs Lemmatization (1 Mark)
-✅ Experimental comparison
-✅ Vocabulary reduction analysis
-✅ Retrieval quality comparison
-✅ Justified conclusion
-
-### Phrase Query Processing (1.5 Marks)
-✅ Biword index implementation
-✅ Positional index implementation
-✅ Query results using both indices
-✅ False positive analysis
-✅ Accuracy comparison
-
-### Binary Tree and B-Tree Comparison (1.5 Marks)
-✅ BST implementation
-✅ B-Tree implementation
-✅ Performance comparison (query search time, retrieval time)
-✅ Multiple query experiments
-✅ Results table with inferences
-
-### Tolerant Retrieval (1.5 Marks)
-✅ Wildcard queries (k-gram index)
-✅ Spelling correction (edit distance)
-✅ Phonetic correction (Soundex)
-✅ Experimental demonstration
-
-### Experimental Evidence and Inference (1 Mark)
-✅ Comprehensive inference section
-✅ Answers to all 7 questions
-✅ Experimental results summary
-✅ Limitations and improvements
+### Recommended Assignment Demo Flow
+1. Open the app and go to `Document Upload`.
+2. Click `Load sample dataset`.
+3. Go to `Text Preprocessing`, apply preprocessing, and run the stemming-vs-lemmatization comparison.
+4. Go to `Inverted Index`, build the index, and search for a term such as `retrieval`.
+5. Go to `Phrase Query Processing`, build both indexes, and try `machine learning algorithms` to inspect the biword vs positional comparison.
+6. Go to `Dictionary Search`, build dictionary trees, search a term, and run the experimental table.
+7. Go to `Tolerant Retrieval`, build tolerant indexes, and test `retriev*`, `retrival`, and `lern`.
+8. Go to `Inference & Discussion` and use the generated observations for the report.
 
 ## Project Structure
 
+```text
+IRAssg1-main/
+├── app.py
+├── requirements.txt
+├── README.md
+└── dataset/
+    ├── doc1.txt
+    ├── doc2.txt
+    ├── doc3.txt
+    ├── doc4.txt
+    ├── doc5.txt
+    ├── doc6.txt
+    └── test.txt
 ```
-ir_assignment/
-├── app.py                 # Main Streamlit application
-├── requirements.txt       # Python dependencies
-├── README.md             # This file
-└── dataset/              # Optional: place custom documents here
-```
+
+`test.txt` is ignored by the app when empty. The added `doc6.txt` is an edge-case document that helps demonstrate a longer-phrase biword false positive.
 
 ## Dependencies
 
-- streamlit==1.28.0
-- pandas==2.1.0
-- numpy==1.24.3
-- nltk==3.8.1
+- streamlit
+- pandas
+- numpy
+- nltk
 
-## Notes for Submission
+## Assignment Coverage
 
-### Required Submission Components
-1. ✅ Streamlit application code (app.py)
-2. ✅ Dataset (use built-in sample or upload your own)
-3. 📝 Report (create separately with screenshots and experimental results)
-4. 📹 Demo evidence (take screenshots or screen recording)
-5. ✅ README file (this file)
+| Requirement | Implemented In |
+| --- | --- |
+| Streamlit end-to-end workflow | All modules run from the Streamlit UI |
+| Text preprocessing | `Text Preprocessing` page |
+| Stemming vs lemmatization | Cosine-similarity comparison in `Text Preprocessing` |
+| Phrase query using biword and positional indexes | `Phrase Query Processing` page |
+| Binary Tree and B-Tree comparison | `Dictionary Search (BST & B-Tree)` page |
+| Tolerant retrieval | `Tolerant Retrieval` page |
+| Experimental evidence and inference | Dynamic tables plus `Inference & Discussion` page |
 
-### Report Guidelines
-Include screenshots of:
-- Document upload page with sample dataset
-- Text preprocessing results
-- Stemming vs Lemmatization comparison
-- Inverted index structure
-- Phrase query comparison (Biword vs Positional)
-- BST vs B-Tree performance table
-- Tolerant retrieval results
-- Inference and discussion section
+## Submission Notes
 
-### Demo Evidence
-Take screenshots or record a short video showing:
-- Uploading documents
-- Running preprocessing
-- Building indices
-- Performing searches
-- Comparing different techniques
+Submit:
+- `app.py`.
+- `requirements.txt`.
+- `README.md`.
+- The `dataset/` folder.
+- Report with screenshots from each module.
+- Experimental tables and inferences generated from your own app run.
+- Demo evidence such as screenshots or a short screen recording.
 
-## Troubleshooting
-
-### NLTK Data Download
-If you encounter NLTK data errors, the application automatically downloads required data. If issues persist:
-```python
-import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('averaged_perceptron_tagger')
-```
-
-### Port Already in Use
-If port 8501 is already in use, Streamlit will automatically try the next available port (8502, 8503, etc.)
-
-### Memory Issues
-For large datasets, consider:
-- Processing fewer documents at a time
-- Using a machine with more RAM
-- Implementing disk-based indexing
-
-## Academic Integrity
-This project is submitted as part of the Information Retrieval course assignment. Ensure you:
-- Run your own experiments
-- Document your specific findings
-- Take your own screenshots
-- Write your own inferences based on your results
-
-## Contact
-For assignment-related queries, use the Taxila Discussion Forum after checking existing queries.
-
----
-**Course:** Information Retrieval (Merged - AIMLCZG537/DSECLZG537)  
-**Assignment:** 1  
-**Work Integrated Learning Programmes Division**  
-**BITS Pilani**
+## NLTK Data
+The app does not require a manual NLTK download to start. If the local machine already has NLTK stopwords and WordNet data, the app uses them. If they are missing, it falls back to a compact built-in stop-word list and simple rule-based lemmatization so the assignment workflow remains executable.

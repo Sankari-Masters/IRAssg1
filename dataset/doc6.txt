@@ -1,0 +1,3 @@
+Machine learning improves retrieval experiments, but learning algorithms may appear later in the same document without forming the intended three-word phrase.
+This document is included to demonstrate a biword-index false positive: it contains the biwords "machine learning" and "learning algorithms" in separate positions.
+It also includes state-of-the-art search wording, wildcard retrieval examples, and spelling-correction friendly terms such as retrieval, relevant, relevance, and learning.

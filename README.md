@@ -58,7 +58,11 @@ This Streamlit application implements the end-to-end Information Retrieval workf
 
 1. Navigate to the project directory:
 ```bash
-cd "/Users/venkateshbhaskara/Documents/** BITS PILANI **/Education/Sem2/IR Assignment1/IRAssg1-main"
+# Windows PowerShell (example)
+cd "C:\\Users\\<you>\\...\\IR\\ir_assignment"
+
+# macOS/Linux (example)
+cd /path/to/ir_assignment
 ```
 
 2. Install dependencies:
@@ -92,6 +96,7 @@ IRAssg1-main/
 ├── app.py
 ├── requirements.txt
 ├── README.md
+├── Report.pdf
 └── dataset/
     ├── doc1.txt
     ├── doc2.txt
@@ -99,10 +104,7 @@ IRAssg1-main/
     ├── doc4.txt
     ├── doc5.txt
     ├── doc6.txt
-    └── test.txt
 ```
-
-`test.txt` is ignored by the app when empty. The added `doc6.txt` is an edge-case document that helps demonstrate a longer-phrase biword false positive.
 
 ## Dependencies
 

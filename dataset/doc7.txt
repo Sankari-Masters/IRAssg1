@@ -1,0 +1,8 @@
+
+Machine learning improves retrieval experiments in many modern search systems.
+The phrase learning algorithms appears later in this document, but not directly after the first phrase.
+This document contains the biwords machine learning and learning algorithms in separate positions.
+
+This is useful for testing the difference between a biword index and a positional index.
+For the query machine learning algorithms, a biword index may incorrectly return this document.
+A positional index should reject this document because the three words are not consecutive.

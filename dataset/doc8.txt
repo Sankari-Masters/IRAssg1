@@ -1,0 +1,8 @@
+Hyphen handling is important in information retrieval preprocessing.
+This document contains hyphenated terms such as battery-swapping, road-safety, data-driven, energy-efficient, and state-of-the-art.
+The system should show how these terms change when hyphen handling is enabled or disabled.
+
+This document also supports tolerant retrieval testing.
+Users may type battrey instead of battery, chargng instead of charging, and retrival instead of retrieval.
+Edit distance, spelling correction, k-gram index, wildcard queries, and Soundex can help handle imperfect queries.
+
